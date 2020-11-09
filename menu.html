@@ -11,19 +11,25 @@
 </head>
 <body>
     <div id="navbar">
-        <a href="#" class="menu-bars" id="show-menu">
+        <a href="#" class="menu-bars" id="show-menu" title="Menu">
             <i class="fas fa-bars"></i>
             <a href="#"><h1><i class="fab fa-youtube" id="youtube-logo"></i>OurTube</h1></a>
         </a>
         <div id="search-bar">
-            <input type="text" placeholder="Search">
-            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search" id="search-input">
+            <i class="fas fa-search" title="Search" id="search-button"></i>
+        </div>
+        <div id="top-upload" title="Create">
+            <a href="#"><i class="fas fa-video"></i></a>
+        </div>
+        <div id="top-sign-in" class:="sign-in">
+            <a href="#"><i class="fas fa-sign-in-alt nav-sign-in-icon"></i>&nbsp; Sign In</a>
         </div>
     </div>
     <nav id="nav-menu">
         <ul class="nav-menu-items">
             <div id="navbar-toggle">
-                <a href="#" class="menu-bars" id="hide-menu">
+                <a href="#" class="menu-bars" id="hide-menu" title="Menu">
                     <i class="fas fa-bars nav-icon"></i>
                 </a>
                 <a href="#"><h1><i class="fab fa-youtube" id="youtube-logo"></i>OurTube</h1></a>
@@ -43,7 +49,7 @@
                 <li class="nav-text"><a href="#"><i class="fas fa-thumbs-up nav-icon"></i>&nbsp; Liked Videos</a></li>
             </div>
             <hr/>
-            <div class="nav-section nav-sign-in">
+            <div class="nav-section nav-sign-in sign-in">
                 <li class="nav-sign-in-text"><a href="#">Sign In to like videos, comment, and subscribe.<br/><br/><i class="fas fa-sign-in-alt nav-sign-in-icon"></i>&nbsp; Sign In</a></li>
             </div>
         </ul>
@@ -51,9 +57,9 @@
     <div class="main-content">
         <hr/>
         <div id="nav-left-static">
-            <li class="nav-text"><a href="#"><i class="fas fa-home nav-icon"></i>&nbsp; Home</a></li>
-            <li class="nav-text"><a href="#"><i class="fas fa-fire nav-icon"></i>&nbsp; Trending</a></li>
-            <li class="nav-text"><a href="#"><i class="fab fa-youtube nav-icon"></i>&nbsp; Subscriptions</a></li>
+            <li class="nav-text"><a href="#"><i class="fas fa-home nav-icon"></i><br> Home</a></li>
+            <li class="nav-text"><a href="#"><i class="fas fa-fire nav-icon"></i><br> Trending</a></li>
+            <li class="nav-text"><a href="#"><i class="fab fa-youtube nav-icon"></i><br> Subscriptions</a></li>
         </div>
     </div>
 </body>

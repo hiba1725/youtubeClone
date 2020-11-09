@@ -22,6 +22,7 @@ hr {
     background-color: rgb(52, 49, 49);
     height: 80px;
     display: flex;
+    overflow: hidden;
     justify-content: flex-start;
     align-items: center;
     width: 100%;
@@ -45,6 +46,11 @@ hr {
     padding-left: 2rem;
 }
 
+#search-bar input:focus{
+    border: none;
+    border: 0.5px solid rgb(49, 49, 255);
+}
+
 #search-bar i {
     border: 1px solid rgb(174, 173, 173);
     height: 40px;
@@ -56,6 +62,44 @@ hr {
 }
 
 #search-bar i:hover {
+    background-color:  rgb(174, 173, 173);
+    cursor: pointer;
+}
+
+#top-upload {
+    border: 1px solid rgb(174, 173, 173);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    height: 40px;
+    width: 80px;
+    align-self: center;
+    justify-self: flex-end;
+    padding-top:12px;
+    padding-left: 30px;
+    margin: 20px;
+    cursor: pointer;
+    background-color: rgb(11, 11, 14);
+}
+
+#top-upload:hover {
+    background-color: rgb(174, 173, 173);
+    cursor: pointer;
+}
+
+#top-sign-in {
+    height: 60px;
+    width: 150px;
+    align-items: center;
+    font-size: 19pt;
+    border: 1px solid rgb(174, 173, 173);
+    padding-top: 12px;padding-left: 10px;
+    margin-right: 20px;
+    background-color: rgb(11, 11, 14);
+}
+
+#top-sign-in:hover {
     background-color:  rgb(174, 173, 173);
     cursor: pointer;
 }
@@ -189,7 +233,7 @@ hr {
 
 #nav-left-static {
     background-color: rgb(52, 49, 49);
-    width: 200px;
+    width: 150px;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -209,14 +253,36 @@ hr {
 
 #nav-left-static li {
     height: 80px;
+    width: 150px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
     font-size: 20pt;
     background-color: rgb(52, 49, 49);
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-@media screen and (max-width: 1290px) {
+#nav-left-static a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 0;
+}
+
+#nav-left-static i {
+    align-self: center;
+    size: 300%;
+}
+
+@media screen and (max-width: 1294px) {
+    #navbar {
+        flex-wrap: wrap;
+        height: 80px;
+        overflow: hidden;
+    }
+
     #search-bar input {
         background-color: rgb(30, 30, 30);
         height: 40px;
@@ -237,5 +303,64 @@ hr {
         justify-self: flex-end;
         padding-top:12px;
         padding-left: 2%;
+    }
+
+    #top-upload {
+        height: 40px;
+        width: 40px;
+        padding-left:10px;
+    }
+
+    #top-sign-in {
+       height: 40px;
+       width: 80px;
+       font-size: 11pt;
+       padding-left: 0;
+    }
+
+    #nav-left-static {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 746px) {
+    #navbar {
+        flex-wrap: wrap;
+        height: 80px;
+        overflow: hidden;
+    }
+
+    #search-bar input {
+        background-color: rgb(30, 30, 30);
+        height: 40px;
+        width: 330px;
+        align-self: center;
+        margin-left: 2rem;
+        border: 0.5px solid  rgb(174, 173, 173);
+        color: white;
+        font-size: 16pt;
+        padding-left: 2rem;
+    }
+    
+    #search-bar i {
+        border: 1px solid rgb(174, 173, 173);
+        height: 40px;
+        width: 40px;
+        align-self: center;
+        justify-self: flex-end;
+        padding-top:12px;
+        padding-left: 12px;
+    }
+
+    #top-upload {
+        display: none;
+    }
+
+    #top-sign-in {
+       display: none;
+    }
+
+    #nav-left-static {
+        display: none;
     }
 }
