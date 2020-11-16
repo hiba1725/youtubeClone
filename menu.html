@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OurTube</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="SideNav.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="icon" href="https://dolphin-emu.org/m/user/blog/3dsupport/youtube.png" type = "image/x-icon">
     <script src="app.js"></script>
@@ -25,7 +26,17 @@
         <div id="top-sign-in" class:="sign-in">
             <a href="sign_in.html"><i class="fas fa-sign-in-alt nav-sign-in-icon"></i>&nbsp; Sign In</a>
         </div>
+        <div id="picture">
+            <a href="#"><i class='far fa-user-circle' style="font-size:36px" onclick="openNav()"></i></a>
+        </div>
     </div>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#"><i class='far fa-id-badge'></i> Your Channel</a>
+        <a href="#"><i class="fas fa-sign-in-alt nav-sign-in-icon"></i> Sign Out</a>
+        <a href="#"><i class='fas fa-sync'></i> Switch Account</a>
+        <a href="#"><i class="fa fa-question-circle"></i> Help</a>
+      </div>
     <nav id="nav-menu">
         <ul class="nav-menu-items">
             <div id="navbar-toggle">
