@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap');
+
+body{
+    background-color: rgb(208, 208, 208);
+    color: rgb(255, 255, 255);
+    font-family: Roboto, sans-serif;
+    font-size: 23pt;
+}
+
+body>.middle-card{
+    width: 700px;
+    height: fit-content;
+    border-radius: 12px;
+    padding: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin: 0 auto;
+    top: 0; bottom: 0; left: 0; right: 0;
+    background-color: rgb(79, 76, 76);
+    box-shadow: -15px 15px rgb(255, 60, 60);
+    text-align: center;
+}
+
+.middle-card>p {
+    border-radius: 12px;
+    padding: 15px;
+    color: rgb(255, 65, 65);
+    background-color: rgb(49, 49, 49);
+}
+#sign-in-form input[type=text] {
+    width: 300px;
+    height: 35px;
+    margin-bottom: 12px;
+    font-size: 16pt;
+    padding-left: 10px;
+}
+#sign-in-form input[type=text]:focus {
+    border: 1px solid rgb(255, 63, 63);
+}
+#sign-in-form input[type=password]:focus {
+    border: 1px solid rgb(255, 63, 63);
+}
+#sign-in-form input[type=password] {
+    width: 300px;
+    height: 35px;
+    font-size: 15pt;
+    padding-left: 10px;
+}
+#sign-in-form input[type=submit] {
+    width: 100px;
+    height: 50px;
+    margin-bottom: 12px;
+    font-size: 17pt;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.bottom-right {
+    margin-right: 0;
+    margin-top: 12px;
+    text-align: right;
+    font-size: 15pt;
+}
+.bottom-right a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+.bottom-right a {
+    text-decoration: none;
+    color:  rgb(255, 63, 63);
+}
