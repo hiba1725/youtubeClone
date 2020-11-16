@@ -233,7 +233,7 @@ hr {
 
 #nav-left-static {
     background-color: rgb(52, 49, 49);
-    width: 150px;
+    width: 100px;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -253,18 +253,19 @@ hr {
 
 #nav-left-static li {
     height: 80px;
-    width: 150px;
+    width: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    font-size: 20pt;
     background-color: rgb(52, 49, 49);
     margin-top: 10px;
     margin-bottom: 10px;
+    padding-left: 5px;
 }
 
 #nav-left-static a {
+    font-size: 11pt;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -273,6 +274,7 @@ hr {
 
 #nav-left-static i {
     align-self: center;
+    /*need to make these bigger*/
     size: 300%;
 }
 
