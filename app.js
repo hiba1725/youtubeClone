@@ -1,4 +1,3 @@
-
 window.onload = function() {
     const openMenu = $('show-menu')
     openMenu.addEventListener('click', toggleMenuShow);
@@ -26,3 +25,12 @@ function toggleMenuHide() {
     var staticSideMenu = $('nav-left-static');
     staticSideMenu.classList.remove('nav-left-static-disappear');
 }
+function openNav() {
+    document.getElementById("mySidenav").style.display="block"
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.display="none"
+    
+  }
