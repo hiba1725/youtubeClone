@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="icon" href="https://dolphin-emu.org/m/user/blog/3dsupport/youtube.png" type = "image/x-icon">
     <script src="app.js"></script>
+    <script src="myChannel.js"></script>
+    <link rel="stylesheet" href="myChannel.css">
 </head>
 <body>
     <div id="navbar">
@@ -19,7 +21,6 @@
         <div id="search-bar">
             <input type="text" placeholder="Search" id="search-input">
             <i class="fas fa-search" title="Search" id="search-button"></i>
-            <button id="add-video">Add video</button>
         </div>
         <div id="top-upload" title="Create">
             <a href="#"><i class="fas fa-video"></i></a>
@@ -48,7 +49,7 @@
             </div>
             <hr/>
             <div class="nav-section">
-                <li class="nav-text"><a href="#"><i class="fas fa-home nav-icon"></i>&nbsp; Home</a></li>
+                <li class="nav-text"><a href="menu.html"><i class="fas fa-home nav-icon"></i>&nbsp; Home</a></li>
                 <li class="nav-text"><a href="#"><i class="fas fa-fire nav-icon"></i>&nbsp; Trending</a></li>
                 <li class="nav-text"><a href="#"><i class="fab fa-youtube nav-icon"></i>&nbsp; Subscriptions</a></li>
             </div>
@@ -69,13 +70,22 @@
     <div class="main-content">
         <hr/>
         <div id="nav-left-static">
-            <li class="nav-text"><a href="#"><i class="fas fa-home nav-icon"></i><br> Home</a></li>
+            <li class="nav-text"><a href="menu.html"><i class="fas fa-home nav-icon"></i><br> Home</a></li>
             <li class="nav-text"><a href="#"><i class="fas fa-fire nav-icon"></i><br> Trending</a></li>
             <li class="nav-text"><a href="#"><i class="fab fa-youtube nav-icon"></i><br> Subscriptions</a></li>
         </div>
     </div>
         <div class="main-body-min-navbar" id = "main-body">
+        
+        <div class="nav_profile_min" id="nav_profile">
+            <nav class="nav_bar">
+                <button class = "nav_bar_button" id="home">Home</button>
+                <button class = "nav_bar_button" id="videos">Videos</button>
+                <button class = "nav_bar_button" id="play-lists">PlayLists</button>
+                <button class = "nav_bar_button" id="channels">Channels</button>
 
+            </nav>
+        </div>
         
     </div>
 </body>

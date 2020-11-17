@@ -4,9 +4,12 @@ window.onload = function() {
     
     const hideMenuIcon = $('hide-menu')
     hideMenuIcon.addEventListener('click', toggleMenuHide);
+
+
+    $("nav_profile").style.width = screen.width+ "px";
     
-    const addVideo = $("add-video");
-    addVideo.addEventListener('click',AddVideo);
+    // const addVideo = $("add-video");
+    // addVideo.addEventListener('click',AddVideo);
 };
 
 function $(id) {
