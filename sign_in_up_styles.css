@@ -21,6 +21,10 @@ body>.middle-card{
     text-align: center;
 }
 
+#remember{
+    font-size: 20px;
+}
+
 .middle-card>p {
     border-radius: 12px;
     padding: 15px;
