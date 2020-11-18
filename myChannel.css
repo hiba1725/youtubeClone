@@ -282,7 +282,46 @@ hr {
     size: 300%;
 }
 
-@media screen and (max-width: 1294px) {
+
+
+
+.nav_profile_min{
+
+}
+
+.nav_bar{
+    padding-left: 100px;
+    display: block;
+    height: 170px;
+    background: rgb(20, 20, 20);
+}
+
+
+.nav_bar>button{
+    position: relative;
+    top: 80%;
+    color: gainsboro;
+    background:  rgb(20, 20, 20);
+    border: none;
+    font-size:20px;
+    margin-left: 50px;
+    margin-right: 50px;
+
+    padding-left: 50px;
+    padding-right: 50px;
+    
+}
+.nav_bar>button:hover{
+    color:rgb(255, 51, 51);
+    cursor: pointer;
+    transition: 350ms;
+    /* background: rgb(119, 119, 119); */
+}
+
+.nav_bar>button:focus{
+    background: rgb(48, 48, 48);
+    border-bottom:10px solid rgb(107, 107, 107);
+}@media screen and (max-width: 1294px) {
     #navbar {
         flex-wrap: wrap;
         height: 80px;
@@ -327,8 +366,19 @@ hr {
     #nav-left-static {
         display: none;
     }
+    .nav_bar>button{
+        margin-left: 20px;
+        margin-right: 20px;
+    
+        padding-left: 20px;
+        padding-right: 20px;
+        transition: 3000ms;
+    }
+    .main-body-min-navbar{
+        margin-left: 0%;
+        transition: 3000ms;
+    }
 }
-
 @media screen and (max-width: 746px) {
     #navbar {
         flex-wrap: wrap;
@@ -369,42 +419,17 @@ hr {
     #nav-left-static {
         display: none;
     }
-}
 
-.nav_profile_min{
-
-}
-
-.nav_bar{
-    padding-left: 100px;
-    display: block;
-    height: 170px;
-    background: rgb(20, 20, 20);
-}
-
-
-.nav_bar>button{
-    position: relative;
-    top: 80%;
-    color: gainsboro;
-    background:  rgb(20, 20, 20);
-    border: none;
-    font-size:20px;
-    margin-left: 50px;
-    margin-right: 50px;
-
-    padding-left: 50px;
-    padding-right: 50px;
-
-}
-.nav_bar>button:hover{
-    color:rgb(255, 51, 51);
-    cursor: pointer;
-    transition: 350ms;
-    /* background: rgb(119, 119, 119); */
-}
-
-.nav_bar>button:focus{
-    background: rgb(48, 48, 48);
-    border-bottom:10px solid rgb(107, 107, 107);
+    .nav_bar>button{
+        margin-left: 10px;
+        margin-right: 10px;
+    
+        padding-left: 10px;
+        padding-right: 10px;
+        transition: 3000ms;
+    }
+    .main-body-min-navbar{
+        margin-left: 0%;
+        transition: 3000ms;
+    }
 }
