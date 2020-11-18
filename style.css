@@ -78,7 +78,7 @@ hr {
     justify-self: flex-end;
     padding-top:12px;
     padding-left: 30px;
-    margin: 20px;
+    margin: auto;
     cursor: pointer;
     background-color: rgb(11, 11, 14);
 }
@@ -95,7 +95,7 @@ hr {
     font-size: 19pt;
     border: 1px solid rgb(174, 173, 173);
     padding-top: 12px;padding-left: 10px;
-    margin-right: 20px;
+    margin: auto;
     background-color: rgb(11, 11, 14);
 }
 

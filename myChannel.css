@@ -398,7 +398,9 @@ hr {
 
 }
 .nav_bar>button:hover{
-    color: rgb(179, 179, 179);
+    color:rgb(255, 51, 51);
+    cursor: pointer;
+    transition: 350ms;
     /* background: rgb(119, 119, 119); */
 }
 

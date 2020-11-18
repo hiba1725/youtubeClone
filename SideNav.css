@@ -3,42 +3,52 @@ body {
   }
   
   .sidenav {
-    height: 100%;
+    height: fit-content;
+    padding-bottom: 20px; 
     width: 0;
     position: absolute;
     z-index: 1;
-    top: 0;
-    left: 0;
+    top: 80px;
+    right: 0;
     background-color: rgb(52, 49, 49);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
-    margin-left: 930px;
-    
+    float: right;
+    box-shadow: inset 0 0 1px rgb(174, 173, 173);
   }
   
   #picture{
-      margin-left: auto;
+      margin: auto;
   }
   .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 18px;
-    color: #818181;
+    color:white;
     display: block;
     transition: 0.3s;
   }
-  
+  .sidenav i {
+    color: rgb(174, 173, 173);
+    margin-right: 0.5em;
+  }
   .sidenav a:hover {
-    color: #f1f1f1;
+    background-color: rgb(117, 112, 112);
   }
   
   .sidenav .closebtn {
     position: absolute;
-    top: 0;
+    top: 1px;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
+    padding: 0;
+  }
+
+  .sidenav .closebtn:hover {
+    color: rgb(255, 41, 41);
+    background-color:  rgb(52, 49, 49);
   }
   
   @media screen and (max-height: 450px) {
