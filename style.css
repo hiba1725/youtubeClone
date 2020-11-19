@@ -278,6 +278,8 @@ hr {
     size: 300%;
 }
 
+
+
 @media screen and (max-width: 1294px) {
     #navbar {
         flex-wrap: wrap;
@@ -403,13 +405,19 @@ hr {
 }
 .main-body-min-navbar .video-diplayed-main-page{
     margin-bottom: 10px;
+    width: 300px;
+    display: block;
 }
 
-.video-ifo{
 
-}
 
 .main-body-min-navbar .video-ifo #divViews{
+    color: rgb(185, 185, 185);
+}
+.main-body-min-navbar .video-ifo #divArtist{
+    color: rgb(185, 185, 185);
+}
+.main-body-max-navbar .video-ifo #divArtist{
     color: rgb(185, 185, 185);
 }
 .main-body-max-navbar .video-box-unit-main-page{
@@ -422,6 +430,8 @@ hr {
 }
 .main-body-max-navbar .video-diplayed-main-page{
     margin-bottom: 10px;
+    width: 270px;
+    display: block;
 }
 
 .main-body-max-navbar .video-ifo #divViews{

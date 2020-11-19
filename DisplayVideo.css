@@ -1,0 +1,111 @@
+.main-body-min-navbar{
+    margin: none;
+}
+
+#main-body{
+    margin: 0%;
+}
+
+#divBox{
+    height: 600px;
+    width: 1300px;
+    display: block;
+    margin: 40px;
+}
+
+#divVideo{
+    height: 500px;
+    width: 1100px;
+    background: red;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#divInfo{
+    height:100px;
+    width: 1100px;
+    padding: 20px;
+    margin: auto;
+}
+#LDSS{
+    float: right;
+}
+
+#Like{
+    width: 50px;
+    height: 40px;
+    font-size: 25px;
+    background: black;
+    border: none;
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+#DisLike{
+    width: 50px;
+    height: 40px;
+    font-size: 25px;
+    background: black;
+    border: none;
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+#Save{
+    width: 70px;
+    height: 40px;
+    font-size: 25px;
+    background: black;
+    border: none;
+    text-align: center;
+    color: white;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.Buttons:hover{
+    color: red;
+}
+
+
+@media screen and (max-width: 1294px) {
+
+    #divBox{
+        width: 900px;
+        height: 400px;
+    }
+
+    #divVideo{
+        width: 700px;
+        height: 300px;
+        background: red;
+    }
+
+    #divInfo{
+        width: 700px;
+        height: 100px;
+    }
+
+}
+
+@media screen and (max-width: 746px) {
+    #divBox{
+        width: 600px;
+    }
+
+    #divVideo{
+        width: 400px;
+        background: red;
+    }
+
+    #divInfo{
+        width: 400;
+    }
+
+    #divLDSS{
+        width: 200px;
+        float: right;
+
+    }
+
+}
