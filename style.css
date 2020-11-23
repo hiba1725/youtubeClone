@@ -26,6 +26,8 @@ hr {
     justify-content: flex-start;
     align-items: center;
     width: 100%;
+    position: fixed;
+    top: 0;
 }
 
 #navbar#search-bar {
@@ -232,6 +234,7 @@ hr {
 }
 
 #nav-left-static {
+    margin-top: 80px;
     background-color: rgb(52, 49, 49);
     width: 100px;
     height: 100vh;
@@ -367,6 +370,10 @@ hr {
     #nav-left-static {
         display: none;
     }
+}
+
+#main-body {
+    margin-top: 80px;
 }
 .main-body-min-navbar{
      display: flex;

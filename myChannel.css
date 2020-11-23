@@ -30,6 +30,8 @@ hr {
     justify-content: flex-start;
     align-items: center;
     width: 100%;
+    position: fixed;
+    top: 0;
 }
 
 #navbar#search-bar {
@@ -290,6 +292,7 @@ hr {
 }
 
 .nav_bar{
+    margin-top: 80px;
     padding-left: 100px;
     display: block;
     height: 170px;
