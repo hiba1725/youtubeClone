@@ -1,3 +1,7 @@
+<?php
+    require_once("config.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +10,11 @@
     <title>OurTube</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="SideNav.css">
+    <link rel="stylesheet" href="DisplayVideo.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="icon" href="https://dolphin-emu.org/m/user/blog/3dsupport/youtube.png" type = "image/x-icon">
-    <script src="app.js"></script>
+    <!-- <script src="app.js"></script> -->
+    <script src="DisplayVideo.js"></script>
     <script src="AddVideo.js"></script>
 </head>
 <body>
@@ -23,7 +29,7 @@
             <button id="add-video">Add video</button>
         </div>
         <div id="top-upload" title="Create">
-            <a href="#"><i class="fas fa-video"></i></a>
+            <a href="upload.php"><i class="fas fa-video"></i></a>
         </div>
         <div id="top-sign-in" class:="sign-in">
             <a href="sign_in.html"><i class="fas fa-sign-in-alt nav-sign-in-icon"></i>&nbsp; Sign In</a>
@@ -69,15 +75,25 @@
     </nav>
     <div class="main-content">
         <hr/>
-        <div id="nav-left-static">
-            <li class="nav-text"><a href="#"><i class="fas fa-home nav-icon"></i><br> Home</a></li>
-            <li class="nav-text"><a href="#"><i class="fas fa-fire nav-icon"></i><br> Trending</a></li>
-            <li class="nav-text"><a href="#"><i class="fab fa-youtube nav-icon"></i><br> Subscriptions</a></li>
-        </div>
     </div>
-        <div class="main-body-min-navbar" id = "main-body">
-
-        
+    <div class="main-body-min-navbar" id = "main-body">
+        <div id="divBox">
+            <div id="divVideo">
+            	 <video width="100%" height="100%" controls>
+				  	<source src="videos/uTorrent vulnerability demonstration.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video> 
+            </div>
+            <div id="divInfo">
+                This Video is Done By Ali Deeb Mazloum
+                <br>
+                <div id="LDSS">
+                    <button class = "Buttons"id="Like">&#128077</button>
+                    <button class = "Buttons"id="DisLike">&#128078</button>
+                    <button class = "Buttons"id="Save">&oplus;Save</button>
+                </div>
+            </div>
+        </div>     
     </div>
 </body>
 </html>

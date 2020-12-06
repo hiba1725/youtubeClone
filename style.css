@@ -444,3 +444,60 @@ hr {
 .main-body-max-navbar .video-ifo #divViews{
     color: rgb(185, 185, 185);
 }
+
+/*Upload form styling*/
+#upload-card h1{
+    margin-bottom: 40px;
+}
+#upload-card {
+    background-color: rgb(30, 30, 30);
+    margin-top: 80px;
+    padding-top: 60px;
+    padding-left: 100px;
+    display: block;
+    height: 130px;
+    width:100%;
+}
+.video-form {
+    width: 80%;
+    border: 1px solid rgb(106, 106, 106);
+    border-radius: 5px;
+}
+.form-group{
+    padding: 10px;
+    width: 50%;
+}
+.form-control {
+    width: 180%;
+    font-size: 16pt;
+    padding: 10px;
+}
+.form-group input[type=file] {
+    width: 180%;
+    height: 35px;
+    font-size: 16pt;
+}
+.form-control:focus {
+    border: 1px solid rgb(58, 58, 255);
+}
+.form-group select {
+    width: 100px;
+    height: 30px;
+    font-size: 14pt;
+    padding: 5px;
+}
+#upload-button {
+    width: 100px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    margin-left: 80%;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    font-size: 14pt;
+    padding: 5px;
+    background-color: rgb(58, 58, 255);
+    color: white;
+} #upload-button:hover {
+    background-color:  rgb(93, 93, 253);
+}

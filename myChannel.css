@@ -292,7 +292,6 @@ hr {
 }
 
 .nav_bar{
-    margin-top: 80px;
     padding-left: 100px;
     display: block;
     height: 170px;
@@ -435,4 +434,13 @@ hr {
         margin-left: 0%;
         transition: 3000ms;
     }
+}
+
+
+#profile-picture {
+    width: 800px; 
+    height: 80px; 
+    border-radius: 360px; 
+    background: blue; 
+    margin-bottom: 200px;
 }

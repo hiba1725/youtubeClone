@@ -1,9 +1,41 @@
+
+<?php
+
+    require_once("classes/video_upload_data.php");
+    require_once("classes/video_processor.php");
+    require_once("config.php");
+
+    //check for submission of form
+    if (isset($_POST['upload-button'])) {
+        
+    }
+
+    //make file upload data
+    $video_upload_data = new VideoUploadData(
+        $_POST['file-input'],
+        $_POST['thumbnail-input'],
+        $_POST["title-input"],
+        $_POST["description-input"],
+        $_POST["privacy-input"],
+        "\$_POST[\"file-input\"]"
+    );
+    $video_processor = new VideoProcessor($con);
+    $was_successful = $video_processor->upload($video_upload_data);
+
+    //convert video to mp4
+
+
+    //upload video to database
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OurTube</title>
+    <title>Upload</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="SideNav.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
@@ -24,10 +56,10 @@
             <i class="fas fa-search" title="Search" id="search-button"></i>
         </div>
         <div id="top-upload" title="Create">
-            <a href="#"><i class="fas fa-video"></i></a>
+            <a href="upload.php"><i class="fas fa-video"></i></a>
         </div>
         <div id="top-sign-in" class:="sign-in">
-            <a href="sign_in.html"><i class="fas fa-sign-in-alt nav-sign-in-icon"></i>&nbsp; Sign In</a>
+            <a href="sign_in.php"><i class="fas fa-sign-in-alt nav-sign-in-icon"></i>&nbsp; Sign In</a>
         </div>
         <div id="picture">
             <a href="#"><i class='far fa-user-circle' style="font-size:36px" onclick="openNav()"></i></a>
@@ -64,7 +96,7 @@
             </div>
             <hr/>
             <div class="nav-section nav-sign-in sign-in">
-                <li class="nav-sign-in-text"><a href="sign_in.html">Sign In to like videos, comment, and subscribe.<br/><br/><i class="fas fa-sign-in-alt nav-sign-in-icon"></i>&nbsp; Sign In</a></li>
+                <li class="nav-sign-in-text"><a href="sign_in.php">Sign In to like videos, comment, and subscribe.<br/><br/><i class="fas fa-sign-in-alt nav-sign-in-icon"></i>&nbsp; Sign In</a></li>
             </div>
         </ul>
     </nav>
@@ -75,17 +107,11 @@
             <li class="nav-text"><a href="#"><i class="fas fa-fire nav-icon"></i><br> Trending</a></li>
             <li class="nav-text"><a href="#"><i class="fab fa-youtube nav-icon"></i><br> Subscriptions</a></li>
         </div>
-    </div>
-        <div class="main-body-min-navbar" id = "main-body">
-        
-        <div class="nav_profile_min" id="nav_profile">
-            <nav class="nav_bar">
-                <button class = "nav_bar_button" id="home">Home</button>
-                <button class = "nav_bar_button" id="videos">Videos</button>
-                <button class = "nav_bar_button" id="play-lists">PlayLists</button>
-                <button class = "nav_bar_button" id="channels">Channels</button>
-
-            </nav>
+    
+        <div class="main-body-min-navbar" id = "upload-card">
+            <?php
+            
+            ?>
         </div>
         
     </div>

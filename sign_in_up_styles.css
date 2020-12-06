@@ -7,6 +7,11 @@ body{
     font-size: 23pt;
 }
 
+label {
+    font-size: 23pt;
+    color: white;
+}
+
 body>.middle-card{
     width: 700px;
     height: fit-content;
