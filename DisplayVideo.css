@@ -110,3 +110,17 @@
     }
 
 }
+
+button {
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+    font-size: 10pt;
+    padding: 5px;
+    background-color: rgb(58, 58, 255);
+    color: white;
+} button:hover {
+    background-color:  rgb(93, 93, 253);
+}

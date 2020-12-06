@@ -17,10 +17,8 @@ body {
     float: right;
     box-shadow: inset 0 0 1px rgb(174, 173, 173);
   }
-  
-  #picture{
-      margin: auto;
-  }
+
+
   .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -55,3 +53,4 @@ body {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
   }
+  

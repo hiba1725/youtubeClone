@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 define('DB_HOST','localhost'); // Host name
 define('DB_USER','root'); // db user name
 define('DB_PASS',''); // db user password=

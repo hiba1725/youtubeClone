@@ -7,7 +7,14 @@ window.onload = function() {
 
 
     $("nav_profile").style.width = screen.width+ "px";
-    
+
+    const homeBtn = $("home");
+    const videosBtn = $("videos");
+    const playlistsBtn = $("playlists");
+    const channelsBtn = $("channels");
+
+    homeBtn.click();
+    homeBtn.focus();
 };
 
 function $(id) {
@@ -40,10 +47,10 @@ function toggleMenuHide() {
 function openNav() {
     document.getElementById("mySidenav").style.display="block"
     document.getElementById("mySidenav").style.width = "250px";
-  }
+}
   
-  function closeNav() {
+function closeNav() {
     document.getElementById("mySidenav").style.display="none"
     
-  }
+}
 

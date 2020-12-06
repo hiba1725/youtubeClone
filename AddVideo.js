@@ -5,7 +5,7 @@ function AddVideo(){
     boxDiv.classList.add("video-box-unit-main-page");
     mainBodyDiv.appendChild(boxDiv);
     var videoDiv = document.createElement("a");
-    videoDiv.href = "DisplayVideo.html";
+    videoDiv.href = "DisplayVideo.php";
     videoDiv.style.background = "red";
     videoDiv.style.height = "200px";
     videoDiv.classList.add("video-diplayed-main-page");

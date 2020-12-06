@@ -285,11 +285,34 @@ hr {
 }
 
 
-
-
-.nav_profile_min{
-
+.content {
+    margin: 100px;
 }
+#profile-picture {
+    width: 80px; 
+    height: 80px; 
+    border-radius: 360px; 
+    background: blue; 
+    border: 3px solid red;
+    display: block;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+button {
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+    font-size: 10pt;
+    padding: 5px;
+    background-color: rgb(58, 58, 255);
+    color: white;
+} button:hover {
+    background-color:  rgb(93, 93, 253);
+}
+
+
 
 .nav_bar{
     padding-left: 100px;
@@ -308,22 +331,23 @@ hr {
     font-size:20px;
     margin-left: 50px;
     margin-right: 50px;
-
     padding-left: 50px;
     padding-right: 50px;
+    transition: ease-out;
     
 }
 .nav_bar>button:hover{
     color:rgb(255, 51, 51);
     cursor: pointer;
-    transition: 350ms;
+    transition: ease-in;
     /* background: rgb(119, 119, 119); */
 }
 
 .nav_bar>button:focus{
-    background: rgb(48, 48, 48);
-    border-bottom:10px solid rgb(107, 107, 107);
-}@media screen and (max-width: 1294px) {
+    color: red;
+}
+
+@media screen and (max-width: 1294px) {
     #navbar {
         flex-wrap: wrap;
         height: 80px;
@@ -374,14 +398,14 @@ hr {
     
         padding-left: 20px;
         padding-right: 20px;
-        transition: 3000ms;
+        transition: ease-in-out;
     }
     .main-body-min-navbar{
         margin-left: 0%;
-        transition: 3000ms;
+        transition: 2000ms;
     }
 }
-@media screen and (max-width: 746px) {
+@media screen and (max-width: 800px) {
     #navbar {
         flex-wrap: wrap;
         height: 80px;
@@ -422,25 +446,16 @@ hr {
         display: none;
     }
 
+    .main-body-min-navbar{
+        margin-left: 0%;
+        transition: ease-in-out;
+    }
+    
     .nav_bar>button{
         margin-left: 10px;
         margin-right: 10px;
-    
         padding-left: 10px;
         padding-right: 10px;
-        transition: 3000ms;
+        transition: ease-in-out;
     }
-    .main-body-min-navbar{
-        margin-left: 0%;
-        transition: 3000ms;
-    }
-}
-
-
-#profile-picture {
-    width: 800px; 
-    height: 80px; 
-    border-radius: 360px; 
-    background: blue; 
-    margin-bottom: 200px;
 }

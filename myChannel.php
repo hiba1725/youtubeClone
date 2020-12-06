@@ -1,5 +1,18 @@
 <?php
     session_start();
+
+    require_once("db_connect.php");
+
+    $email = $_COOKIE["email"];
+    $db = getDB();
+    $uid = "";
+    $query ="SELECT * FROM users WHERE email = '$email'";
+    $cells = $db->query($query);
+    foreach($cells as $cell) {
+        $uid = $cell['id'];
+    }
+
+    $profile_pic = "uploads/profile_pics/".$uid.".jpg";
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +39,6 @@
         <div id="search-bar">
             <input type="text" placeholder="Search" id="search-input">
             <i class="fas fa-search" title="Search" id="search-button"></i>
-            <button id="add-video">Add video</button>
         </div>
         <a href="upload.php"><div id="top-upload" title="Create">
             <i class="fas fa-video"></i>
@@ -34,9 +46,12 @@
             <?php 
                 if(isset($_SESSION['email'])){
                     echo "
-                        <div id='picture'>
-                            <a href='#'><i class='far fa-user-circle' style='font-size:36px' onclick='openNav()'></i></a>
-                        </div>
+                        <img src='$profile_pic' alt='Profile Picture' id='picture' style='
+                        margin: auto;
+                        height: 50px;
+                        width: 50px;
+                        border-radius: 360px;
+                        cursor: pointer;' onclick='openNav()'></img>
                     ";
                 } else {
                     echo '
@@ -129,20 +144,19 @@
             <nav class="nav_bar">
                 <button class = "nav_bar_button" id="home">Home</button>
                 <button class = "nav_bar_button" id="videos">Videos</button>
-                <button class = "nav_bar_button" id="play-lists">PlayLists</button>
+                <button class = "nav_bar_button" id="playlists">PlayLists</button>
                 <button class = "nav_bar_button" id="channels">Channels</button>
-
             </nav>
         </div>
 
-        <div>
-            <form>
-                <img src="./uploads/profile_pics/forest.jpg" alt="Profile Picture" id="profile-picture">
-                <label for="profile-pic">Change your profile picture</label> </br>
+        <div class="content">
+            <form action="upload_pic.php" method="POST" enctype="multipart/form-data">
+                <img src="<?=$profile_pic?>" alt="Profile Picture" id="profile-picture">
+                <label for="profile-pic">&lt; &lt; Edit Profile Picture &gt; &gt;</label> </br>
                 <input type="file" name="profile-pic" id="profile-pic">
+                <button type="submit" name="upload-pic">Submit Changes</button>
             </form>
         </div>
-        
     </div>
 </body>
 </html>

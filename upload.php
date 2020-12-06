@@ -1,5 +1,18 @@
 <?php
     session_start();
+
+    require_once("db_connect.php");
+
+    $email = $_COOKIE["email"];
+    $db = getDB();
+    $uid = "";
+    $query ="SELECT * FROM users WHERE email = '$email'";
+    $cells = $db->query($query);
+    foreach($cells as $cell) {
+        $uid = $cell['id'];
+    }
+
+    $profile_pic = "uploads/profile_pics/".$uid.".jpg";
 ?>
 
 <!DOCTYPE html>
@@ -7,7 +20,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload</title>
+    <title>OurTube</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="SideNav.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
@@ -33,9 +46,12 @@
             <?php 
                 if(isset($_SESSION['email'])){
                     echo "
-                        <div id='picture'>
-                            <a href='#'><i class='far fa-user-circle' style='font-size:36px' onclick='openNav()'></i></a>
-                        </div>
+                        <img src='$profile_pic' alt='Profile Picture' id='picture' style='
+                        margin: auto;
+                        height: 50px;
+                        width: 50px;
+                        border-radius: 360px;
+                        cursor: pointer;' onclick='openNav()'></img>
                     ";
                 } else {
                     echo '
