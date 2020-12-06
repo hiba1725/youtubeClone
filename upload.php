@@ -26,7 +26,6 @@
         <div id="search-bar">
             <input type="text" placeholder="Search" id="search-input">
             <i class="fas fa-search" title="Search" id="search-button"></i>
-            <button id="add-video">Add video</button>
         </div>
         <a href="upload.php"><div id="top-upload" title="Create">
             <i class="fas fa-video"></i>
