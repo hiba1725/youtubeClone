@@ -1,8 +1,7 @@
 <?php
     session_start();
 
-    require_once("db_connect.php");
-
+    require_once("db_connect.php");   
     $email = $_COOKIE["email"];
     $db = getDB();
     $uid = "";
@@ -194,9 +193,23 @@ $db->exec($query);
             <h2> Comments</h2>
                 <div class="userComment">
                     <div class="comment">
+                   
+
                         <div class="user"><span class="time"><?php foreach($cells as $cel) {
                                 $tm = $cel['createdON'];
                                 $ucmnt = $cel['comment'];
+                                echo "
+                                <img src='$profile_pic' alt='Profile Picture' id='picture' style='
+                                margin: auto;
+                                height: 50px;
+                                width: 50px;
+                                border-radius: 360px;
+                                cursor: pointer;' onclick='openNav()'></img>
+                            ";
+                                echo $_COOKIE['email'];
+                                ?>
+                                <br>
+                                <?php
                                 echo $tm;
                                 echo " ";
                                 
@@ -224,6 +237,7 @@ $db->exec($query);
 
             function insert(){
                 $comment=document.getElementById("mainComment").value;
+                if($comment.length>0){
                 <?php
                 $db=  new PDO("mysql:dbname=ourtube;host=localhost", "root", "");
                 
@@ -239,7 +253,9 @@ $db->exec($query);
                             .")"; 
             $db->exec($query);
                  
-                ?>
+                ?>}
+                else
+                {alter("No comment typed");}
             }         
     </script>
 </body>
