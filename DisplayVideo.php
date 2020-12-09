@@ -14,6 +14,30 @@
 
     $profile_pic = "uploads/profile_pics/".$uid.".jpg";
 ?>
+<?php
+if(isset($_POST["addComment"])){
+    
+    $db=  new PDO("mysql:dbname=ourtube;host=localhost", "root", "");
+    $comment=$db->real_escape_string($_POST["comment"]);
+
+
+
+    $query=  "
+             INSERT INTO comments (
+                comment,
+                createdON
+                )
+                 VALUES 
+                (".
+                $comment.","
+                .NOW()
+                .")"; 
+$db->exec($query);
+    
+}
+$nbofcmnts=$db->query("SELECT id FROM comments");
+$nbcmt=$nbofcmnts->num_rows;
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -155,12 +179,60 @@
                     <button id="DisLike" onclick="AddDisLike()">&#128078<span id="NumberOfDisLikes"></span></button>
                     
                     <button id="Save">&oplus;Save</button>
+                    
                 </div>
+                
             </div>
-        </div>     
-    </div>
+            <?php
+                $query ="SELECT * FROM comments";
+                $cells = $db->query($query);
+                
+            ?>
+            <textarea class="form-control" placeholder="Add Comment" id="mainComment" cols="20" rows="2"></textarea><br><br>
+            <button class="btn-comment" id="comments" style="float:right">Add Comment</button><br>
+            <h2><?php echo $nbcmt ?> Comments</h2>
+                <div class="userComment">
+                    <div class="comment">
+                        <div class="user"><span class="time"><?php foreach($cells as $cel) {
+                                $tm = $cel['createdON'];
+                                echo $tm;
+                            }?>
+                            </span></div>
+                        <div class="userComments"><?php
+                             foreach($cells as $cell) {
+                                $ucmnt = $cell['comment'];
+                                echo $ucmnt;
+                            }
+                        ?>
+                        </div>
+                        <div class="replies">welcome</div>
+                    </div>
+                </div> 
+            </div>
+        </div>    
+       
+   
+    
     <script>
             DisplayInfo("<?=$_REQUEST["UploadedVideosName"]?>","<?=$_REQUEST["UploadedVideosID"]?>","<?=$uid?>");
+            $(document).ready(function ()){
+                var comment=$("#mainComment").val();
+                if(comment.length>1){
+                    $.ajax({
+                        url:"COMMENT.php",
+                        method:"POST",
+                        dataType:"text",
+                        data:{
+                            addComment:1,
+                            comment: comment,
+                        }. success:function(response){
+                            console.log(response);
+                        }
+                    });
+                }else{
+                    alert("Please Check The Your Comment");
+                }
+            }
     </script>
 </body>
 </html>
