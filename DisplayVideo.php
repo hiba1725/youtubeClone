@@ -35,8 +35,7 @@ if(isset($_POST["addComment"])){
 $db->exec($query);
     
 }
-$nbofcmnts=$db->query("SELECT id FROM comments");
-$nbcmt=$nbofcmnts->num_rows;
+
 ?>
 
 <!DOCTYPE html>
@@ -185,27 +184,34 @@ $nbcmt=$nbofcmnts->num_rows;
             </div>
             <?php
                 $query ="SELECT * FROM comments";
+                $nbcmts=$db->query("SELECT COUNT(comment) FROM comments"); 
+                
                 $cells = $db->query($query);
                 
             ?>
             <textarea class="form-control" placeholder="Add Comment" id="mainComment" cols="20" rows="2"></textarea><br><br>
-            <button class="btn-comment" id="comments" style="float:right">Add Comment</button><br>
-            <h2><?php echo $nbcmt ?> Comments</h2>
+            <button class="btn-comment" id="comments" style="float:right" onclick="insert()">Add Comment</button><br>
+            <h2> Comments</h2>
                 <div class="userComment">
                     <div class="comment">
                         <div class="user"><span class="time"><?php foreach($cells as $cel) {
                                 $tm = $cel['createdON'];
+                                $ucmnt = $cel['comment'];
                                 echo $tm;
-                            }?>
-                            </span></div>
-                        <div class="userComments"><?php
-                             foreach($cells as $cell) {
-                                $ucmnt = $cell['comment'];
+                                echo " ";
+                                
+                                
+                                
                                 echo $ucmnt;
-                            }
-                        ?>
+                                ?>
+                                <br>
+                                <?php
+                            }?>
+                            <br>
+                            </span></div>
+                        <div class="userComments">
                         </div>
-                        <div class="replies">welcome</div>
+                        <div class="replies" id="kk"></div>
                     </div>
                 </div> 
             </div>
@@ -215,24 +221,26 @@ $nbcmt=$nbofcmnts->num_rows;
     
     <script>
             DisplayInfo("<?=$_REQUEST["UploadedVideosName"]?>","<?=$_REQUEST["UploadedVideosID"]?>","<?=$uid?>");
-            $(document).ready(function ()){
-                var comment=$("#mainComment").val();
-                if(comment.length>1){
-                    $.ajax({
-                        url:"COMMENT.php",
-                        method:"POST",
-                        dataType:"text",
-                        data:{
-                            addComment:1,
-                            comment: comment,
-                        }. success:function(response){
-                            console.log(response);
-                        }
-                    });
-                }else{
-                    alert("Please Check The Your Comment");
-                }
-            }
+
+            function insert(){
+                $comment=document.getElementById("mainComment").value;
+                <?php
+                $db=  new PDO("mysql:dbname=ourtube;host=localhost", "root", "");
+                
+                $query=  "
+                         INSERT INTO comments (
+                            comment,
+                            createdON
+                            )
+                             VALUES 
+                            (".
+                            $comment.","
+                            .NOW()
+                            .")"; 
+            $db->exec($query);
+                 
+                ?>
+            }         
     </script>
 </body>
 </html>
