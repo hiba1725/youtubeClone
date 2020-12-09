@@ -156,7 +156,7 @@
                     <textarea class="form-control" placeholder="Description" rows="3" name="description-input" required></textarea>
                 </div>
                 <div class="form-group">
-                    <select class="form-control" name="privacy-input">
+                    <select class="form-control" name="privacy_input">
                         <option value="hidden">Hidden</option>
                         <option value="public">Public</option>
                     </select>

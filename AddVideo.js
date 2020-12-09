@@ -1,14 +1,18 @@
 
-function AddVideo(){
-    var mainBodyDiv = $("main-body");
+function AddVideo(ID,Name,Namef,Description,username,email){
+    // console.log("Ali");
+    var mainBodyDiv = document.getElementById("main-body");
     var boxDiv = document.createElement("div");
     boxDiv.classList.add("video-box-unit-main-page");
     mainBodyDiv.appendChild(boxDiv);
     var videoDiv = document.createElement("a");
-    videoDiv.href = "DisplayVideo.php";
-    videoDiv.style.background = "red";
+    videoDiv.href = "DisplayVideo.php?UploadedVideosName="+Name+"&UploadedVideosID="+ID;
     videoDiv.style.height = "200px";
     videoDiv.classList.add("video-diplayed-main-page");
+    videoDiv.style.backgroundImage = "url('Thumbnail/"+Name+".jpg')";
+    console.log(email+Name);
+    videoDiv.style.backgroundSize = "cover";
+    videoDiv.style.backgroundRepeat = "no-repeat";
     boxDiv.appendChild(videoDiv);
 
     var infoDiv = document.createElement("div");
@@ -28,9 +32,17 @@ function AddVideo(){
     divImage.style.marginBottom = "200px";
     divDetails.style.width = "300px";
     divDetails.style.paddingLeft = "45px";
-    divName.innerHTML = "Name: Ali Mazloum";
-    divArtist.innerHTML = "Name again: Ali Mazloum again";
-    divViews.innerHTML = "2.1M    views 3 years age";
+    divName.innerHTML = "Name: "+Namef;
+    divArtist.innerHTML = "Apploaded By: "+username;
+    var ajax = new XMLHttpRequest();
+    ajax.onload=function(){
+        divViews.innerHTML = ""+this.responseText;
+    }
+    ajax.onerror = function(){
+        console.log("Error occured");
+    }
+    ajax.open("GEt","VideoDetails.php?UploadedVideosID="+ID,true);
+    ajax.send();
 
     divViews.id = "divViews";
     divArtist.id = "divArtist";
@@ -46,4 +58,8 @@ function AddVideo(){
     divDetails.appendChild(divViews);
     boxDiv.appendChild(infoDiv);
 
+}
+
+function $(id){
+    return document.getElementById(id);
 }

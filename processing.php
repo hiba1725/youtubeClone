@@ -1,31 +1,33 @@
 
 <?php
-
-    require_once("classes/video_upload_data.php");
-    require_once("classes/video_processor.php");
-    require_once("config.php");
+    session_start();
+    // require_once("classes/video_upload_data.php");
+    // require_once("classes/video_processor.php");
+    // require_once("config.php");
+    require_once("db_connect.php");
 
     //check for submission of form
     if (isset($_POST['upload-button'])) {
-        
+       $_FILES["name"] = $_REQUEST["title-input"];
+       if(is_uploaded_file($_FILES["file-input"]["tmp_name"])){
+           $email = $_SESSION["email"];
+           move_uploaded_file($_FILES["file-input"]["tmp_name"],"Videos/".$email.$_FILES["name"].".mp4");
+           move_uploaded_file($_FILES["thumbnail-input"]["tmp_name"],"Thumbnail/".$email.$_FILES["name"].".jpg");
+           $text = $_REQUEST["description-input"];
+            $db = getDB();
+            $userID = "SELECT * FROM USERS WHERE EMAIL="."'$email'";
+            $temp = $db->query($userID);
+            foreach($temp as $ID){
+                $userID = $ID["id"];
+            }
+            $hide;
+            $query = "INSERT INTO UPLOADedVIDEOS (UPLOADEDVIDEOsID,UploadedBy,UPLOADEDVIDEONAME,UPLOADEDVIDEONAMEf,UploadedVideosDescription,Hide) VALUES("."'$email"."$_FILES[name]',"."'$userID',"."'$email"."$_FILES[name]',"."'$_FILES[name]',"."'$text',"."'$_REQUEST[privacy_input]'".")";
+            $db->exec($query);
+            header("location:menu.php");
+       }
+
     }
 
-    //make file upload data
-    $video_upload_data = new VideoUploadData(
-        $_POST['file-input'],
-        $_POST['thumbnail-input'],
-        $_POST["title-input"],
-        $_POST["description-input"],
-        $_POST["privacy-input"],
-        "\$_POST[\"file-input\"]"
-    );
-    $video_processor = new VideoProcessor($con);
-    $was_successful = $video_processor->upload($video_upload_data);
-
-    //convert video to mp4
-
-
-    //upload video to database
 
 ?>
 

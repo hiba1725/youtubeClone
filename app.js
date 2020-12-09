@@ -5,8 +5,8 @@ window.onload = function() {
     const hideMenuIcon = $('hide-menu')
     hideMenuIcon.addEventListener('click', toggleMenuHide);
 
-    const addVideo = $("add-video");
-    addVideo.addEventListener('click',AddVideo);
+    // const addVideo = $("add-video");
+    // addVideo.addEventListener('click',AddVideo);
     
 };
 

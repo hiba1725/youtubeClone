@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="DisplayVideo.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="icon" href="https://dolphin-emu.org/m/user/blog/3dsupport/youtube.png" type = "image/x-icon">
-    <!-- <script src="app.js"></script> -->
+    <script src="app.js"></script>
     <script src="DisplayVideo.js"></script>
     <script src="AddVideo.js"></script>
 </head>
@@ -138,20 +138,29 @@
         <div id="divBox">
             <div id="divVideo">
             	 <video width="100%" height="100%" controls>
-				  	<source src="videos/uTorrent vulnerability demonstration.mp4" type="video/mp4">
+                     <?php
+                     $temp = "Videos/".$_REQUEST["UploadedVideosName"].".mp4";
+                     
+                     ?>
+                      <source src="<?=$temp?>" type="video/mp4">
 					Your browser does not support the video tag.
 				</video> 
             </div>
             <div id="divInfo">
-                This Video is Done By Ali Deeb Mazloum
+                
                 <br>
                 <div id="LDSS">
-                    <button id="Like">&#128077</button>
-                    <button id="DisLike">&#128078</button>
+                    
+                    <button id="Like" onclick="AddLike()">&#128077<span id="NumberOfLikes"></span></button>
+                    <button id="DisLike" onclick="AddDisLike()">&#128078<span id="NumberOfDisLikes"></span></button>
+                    
                     <button id="Save">&oplus;Save</button>
                 </div>
             </div>
         </div>     
     </div>
+    <script>
+            DisplayInfo("<?=$_REQUEST["UploadedVideosName"]?>","<?=$_REQUEST["UploadedVideosID"]?>","<?=$uid?>");
+    </script>
 </body>
 </html>

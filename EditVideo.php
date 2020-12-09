@@ -1,23 +1,20 @@
 <?php
-        session_start();
+    session_start();
 
-        require_once("db_connect.php");
-    
-        $email = $_SESSION["email"];
-        $db = getDB();
-        $uid = "";
-        $query ="SELECT * FROM users WHERE email = '$email'";
-        $cells = $db->query($query);
-        $username;
-        foreach($cells as $cell) {
-            $uid = $cell['id'];
-            $username = $cell['username'];
-            print("username");
-        }
+    require_once("db_connect.php");
 
-        $profile_pic = "uploads/profile_pics/".$uid.".jpg";
+    $email = $_COOKIE["email"];
+    $db = getDB();
+    $uid = "";
+    $query ="SELECT * FROM users WHERE email = '$email'";
+    $cells = $db->query($query);
+    foreach($cells as $cell) {
+        $uid = $cell['id'];
+    }
+
+    $profile_pic = "uploads/profile_pics/".$uid.".jpg";
 ?>
-        
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,15 +23,15 @@
     <title>OurTube</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="SideNav.css">
-    <link rel="stylesheet" href="myChannel.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="icon" href="https://dolphin-emu.org/m/user/blog/3dsupport/youtube.png" type = "image/x-icon">
     <script src="app.js"></script>
-    <script src="AddVideo.js"></script>
+    <script src="myChannel.js"></script>
+    <link rel="stylesheet" href="myChannel.css">
+    <!-- <script src="AddVideo.js"></script> -->
 </head>
-
 <body>
-    <div id="navbar">
+<div id="navbar">
         <a href="#" class="menu-bars" id="show-menu" title="Menu">
             <i class="fas fa-bars"></i>
             <a href="menu.php"><h1><i class="fab fa-youtube" id="youtube-logo"></i>OurTube</h1></a>
@@ -42,7 +39,6 @@
         <div id="search-bar">
             <input type="text" placeholder="Search" id="search-input">
             <i class="fas fa-search" title="Search" id="search-button"></i>
-            <!-- <button id="add-video">Add Video</button> -->
         </div>
         <a href="upload.php"><div id="top-upload" title="Create">
             <i class="fas fa-video"></i>
@@ -65,7 +61,6 @@
                     ';
                 }
             ?>
-    </div>
     </div>
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -142,26 +137,29 @@
             <li class="nav-text"><a href="#"><i class="fas fa-fire nav-icon"></i><br> Trending</a></li>
             <li class="nav-text"><a href="#"><i class="fab fa-youtube nav-icon"></i><br> Subscriptions</a></li>
         </div>
-    </div>
-        <div class="main-body-min-navbar" id = "main-body">
-        <?php
-            $query = "SELECT * FROM UPLOADEDVIDEOS WHERE Hide="."'public'";
-            // $query = "SELECT * FROM UPLOADEDVIDEOS WHERE UPLOADEDVIDEOSID LIKE "."'$email%'";
-            $videos = $db->query($query);
-            foreach($videos as $video){
-                $name = "SELECT * FROM USERS WHERE ID="."'$video[UploadedBy]'";
-                $name = $db->query($name);
-                foreach($name as $n){
-                    $name = $n["username"];
-                    $emailofuploader = $n["email"];
-                }
-                ?>
-                 <script type="text/javascript">
-                                AddVideo("<?= $video["UploadedVideosID"] ?>", "<?= $video["UploadedVideoName"] ?>", "<?= $video["UploadedVideoNamef"] ?>","<?= $video["UploadedVideosDescription"] ?>", "<?= $username ?>","<?=$emailofuploader?>");
-                </script>
-                 <?php
-            }
-?>
+    
+        <div class="main-body-min-navbar" id = "upload-card">
+            <h1>Edit Your Video</h1>
+            <form action='UpdateVideo.php?UploadedVideosID=<?=$_REQUEST["UploadedVideosID"]?>' class="video-form" method='POST'>
+                
+                <div class="form-group">
+                    <input type='text' class="form-control" name="title_input" placeholder='Title' required value="<?=$_REQUEST["UploadedVideoNamef"]?>">
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" placeholder="Description" rows="3" name="description_input" required ><?=$_REQUEST["UploadedVideosDescription"]?></textarea>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" name="privacy_input">
+                        <option value="hidden">Hidden</option>
+                        <option value="public">Public</option>
+                    </select>
+                </div>
+                <button name="upload-button" id="upload-button">changes</button>
+            </form>
+            <form action="DeleteVideo.php?UploadedVideosID=<?=$_REQUEST["UploadedVideosID"]?>" method="Post" class="video-form">
+                <input type="submit" value="Delete">
+        </form>
+
         </div>
         
     </div>
