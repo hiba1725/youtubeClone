@@ -1,4 +1,4 @@
-.main-body-min-navbar{
+a.main-body-min-navbar{
     margin: none;
 }
 
@@ -12,6 +12,27 @@
     width: 1300px;
     display: block;
     margin: 40px;
+}
+.user{
+font-weight: bold;
+color: white;
+}
+
+.time{
+color: gray;
+}
+
+.userComment{
+color: white;
+}
+
+.replies{
+margin-left: 20px;
+
+}
+
+.replies.comment{
+margin-top:20px;
 }
 
 #divVideo{
