@@ -2,9 +2,10 @@
         session_start();
 
         require_once("db_connect.php");
-    
-        $email = $_SESSION["email"];
         $db = getDB();
+    
+        if(isset($_SESSION["email"])){
+        $email = $_SESSION["email"];
         $uid = "";
         $query ="SELECT * FROM users WHERE email = '$email'";
         $cells = $db->query($query);
@@ -19,7 +20,7 @@
             $profile_pic = "uploads/profile_pics/".$uid.".jpg";
         } else {
             $profile_pic = "uploads/profile_pics/default.jpg";
-        }
+        }}
 ?>
         
 <!DOCTYPE html>
