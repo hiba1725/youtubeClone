@@ -10,8 +10,12 @@
     foreach($cells as $cell) {
         $uid = $cell['id'];
     }
-
     $profile_pic = "uploads/profile_pics/".$uid.".jpg";
+    if (file_exists($profile_pic)){
+        $profile_pic = "uploads/profile_pics/".$uid.".jpg";
+    } else {
+        $profile_pic = "uploads/profile_pics/default.jpg";
+    }
 ?>
 <?php
 if(isset($_POST["addComment"])){

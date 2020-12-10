@@ -15,6 +15,11 @@ foreach ($cells as $cell) {
 }
 
 $profile_pic = "uploads/profile_pics/" . $uid . ".jpg";
+if (file_exists($profile_pic)){
+    $profile_pic = "uploads/profile_pics/".$uid.".jpg";
+} else {
+    $profile_pic = "uploads/profile_pics/default.jpg";
+}
 ?>
 
 <!DOCTYPE html>

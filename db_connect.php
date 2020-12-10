@@ -4,7 +4,7 @@ define('DB_HOST','localhost'); // Host name
 define('DB_USER','root'); // db user name
 define('DB_PASS',''); // db user password=
 define('DB_NAME','ourtube'); // db name
-define('DB_PORT','3306'); // db port #
+define('DB_PORT','3307'); // db port #
 
 define("BASE_URL", "http://localhost/youtubeClone/");
 
