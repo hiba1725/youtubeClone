@@ -190,56 +190,9 @@ $db->exec($query);
                 </div>
                 
             </div>
-            <?php
-                $query ="SELECT * FROM comments";
-                $nbcmts=$db->query("SELECT COUNT(comment) FROM comments"); 
-                
-                $cells = $db->query($query);
-                
-            ?>
-            <textarea class="form-control" placeholder="Add Comment" id="mainComment" cols="20" rows="2"></textarea><br><br>
-            <button class="btn-comment" id="comments" style="float:right" onclick="insert()">Add Comment</button><br>
-            <h2> Comments</h2>
-                <div class="userComment">
-                    <div class="comment">
-                   
-
-                        <div class="user"><span class="time"><?php foreach($cells as $cel) {
-                                $tm = $cel['createdON'];
-                                $ucmnt = $cel['comment'];
-                                echo "
-                                <img src='$profile_pic' alt='Profile Picture' id='picture' style='
-                                margin: auto;
-                                height: 50px;
-                                width: 50px;
-                                border-radius: 360px;
-                                cursor: pointer;' onclick='openNav()'></img>
-                            ";
-                                echo $_COOKIE['email'];
-                                ?>
-                                <br>
-                                <?php
-                                echo $tm;
-                                echo " ";
-                                
-                                
-                                
-                                echo $ucmnt;
-                                ?>
-                                <br>
-                                <?php
-                            }?>
-                            <br>
-                            </span></div>
-                        <div class="userComments">
-                        </div>
-                        <div class="replies" id="kk"></div>
-                    </div>
-                </div> 
-            </div>
-        </div>    
+           
        
-   
+
     
     <script>
             DisplayInfo("<?=$_REQUEST["UploadedVideosName"]?>","<?=$_REQUEST["UploadedVideosID"]?>","<?=$uid?>");
